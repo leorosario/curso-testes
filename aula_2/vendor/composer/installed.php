@@ -3,7 +3,7 @@
         'name' => 'leonardo/aula_2',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '44d89fb92c55a8fb95f95a85513161f9de6eecae',
+        'reference' => '0b4fec0055370aeb9d1ee61ac85dcf14bf05e261',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'leonardo/aula_2' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '44d89fb92c55a8fb95f95a85513161f9de6eecae',
+            'reference' => '0b4fec0055370aeb9d1ee61ac85dcf14bf05e261',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

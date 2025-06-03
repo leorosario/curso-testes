@@ -4,26 +4,25 @@ namespace OrderBundle\Validators\Test;
 
 use OrderBundle\Validators\NotEmptyValidator;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class NotEmptyValidatorTest extends TestCase
 {
-    /**
-     * @dataProvider valueProvider
-     */
+    #[DataProvider('valueProvider')]
     public function testIsValid($value, $expectedResult)
     {
         $notEmptyValidator = new NotEmptyValidator($value);
 
         $isValid = $notEmptyValidator->isValid();
 
-        $this->assertEquals($expectedResult, $isValid);
+        $this->assertSame($expectedResult, $isValid);
     }
 
-    public function valueProvider()
+    public static function valueProvider()
     {
         return [
-            'shouldBeValidWhenValueIsNotEmpty' => ['value' => 'foo', 'expectedResult' => true],
-            'shouldNotBeValidWhenValueIsEmpty' => ['value' => '', 'expectedResult' => false]
+            'shouldBeValidWhenValueIsNotEmpty' => ['foo', true],
+            'shouldNotBeValidWhenValueIsEmpty' => ['', false]
         ];
     }
 }

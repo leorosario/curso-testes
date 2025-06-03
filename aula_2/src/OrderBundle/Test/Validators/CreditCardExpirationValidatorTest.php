@@ -4,12 +4,11 @@ namespace OrderBundle\Validators\Test;
 
 use OrderBundle\Validators\CreditCardExpirationValidator;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class CreditCardExpirationValidatorTest extends TestCase
 {
-    /**
-     * @dataProvider valueProvider
-     */
+    #[DataProvider('valueProvider')]
     public function testIsValid($value, $expectedResult)
     {
         $creditCardExpirationDate = new \DateTime($value);
@@ -20,7 +19,7 @@ class CreditCardExpirationValidatorTest extends TestCase
         $this->assertEquals($expectedResult, $isValid);
     }
 
-    public function valueProvider()
+    public static function valueProvider()
     {
         return [
             'shouldBeValidWhenDateIsNotExpired' => ['value' => '2040-01-01', 'expectedResult' => true],

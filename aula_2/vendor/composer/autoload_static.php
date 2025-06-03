@@ -16,9 +16,9 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         array (
             'PhpParser\\' => 10,
         ),
-        'L' => 
+        'O' => 
         array (
-            'Leonardo\\Aula2\\' => 15,
+            'OrderBundle\\' => 12,
         ),
         'D' => 
         array (
@@ -31,9 +31,9 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Leonardo\\Aula2\\' => 
+        'OrderBundle\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/OrderBundle',
         ),
         'DeepCopy\\' => 
         array (

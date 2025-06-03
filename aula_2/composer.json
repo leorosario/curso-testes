@@ -3,7 +3,7 @@
     "description": "Projeto de testes",
     "autoload": {
         "psr-4": {
-            "Leonardo\\Aula2\\": "src/"
+            "OrderBundle\\": "src/OrderBundle/"
         }
     },
     "authors": [

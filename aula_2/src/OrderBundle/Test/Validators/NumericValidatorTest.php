@@ -4,28 +4,27 @@ namespace OrderBundle\Validators\Test;
 
 use OrderBundle\Validators\NumericValidator;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class NumericValidatorTest extends TestCase
 {
-    /**
-     * @dataProvider valueProvider
-     */
+    #[DataProvider('valueProvider')]
     public function testIsValid($value, $expectedResult)
     {
         $numericValidator = new NumericValidator($value);
 
         $isValid = $numericValidator->isValid();
 
-        $this->assertEquals($expectedResult, $isValid);
+        $this->assertSame($expectedResult, $isValid);
     }
 
-    public function valueProvider()
+    public static function valueProvider()
     {
         return [
-            'shouldBeValidWhenValueIsANumber' => ['value' => 20, 'expectedResult' => true],
-            'shouldBeValidWhenValueIsANumericString' => ['value' => '20', 'expectedResult' => true],
-            'shouldNotBeValidWhenValueIsNotANumber' => ['value' => 'bla', 'expectedResult' => false],
-            'shouldNotBeValidWhenValueIsEmpty' => ['value' => '', 'expectedResult' => false],
+            'shouldBeValidWhenValueIsANumber' => [20, true],
+            'shouldBeValidWhenValueIsANumericString' => ['20', true],
+            'shouldNotBeValidWhenValueIsNotANumber' => ['bla', false],
+            'shouldNotBeValidWhenValueIsEmpty' => ['', false],
         ];
     }
 }
