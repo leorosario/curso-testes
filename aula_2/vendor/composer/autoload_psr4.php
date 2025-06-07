@@ -8,5 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'OrderBundle\\' => array($baseDir . '/src/OrderBundle'),
+    'MyFramework\\' => array($baseDir . '/app/MyFramework'),
+    'FidelityProgramBundle\\' => array($baseDir . '/src/FidelityProgramBundle'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
 );

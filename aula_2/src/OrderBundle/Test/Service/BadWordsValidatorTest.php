@@ -5,14 +5,12 @@ namespace OrderBundle\Test\Service;
 use OrderBundle\Repository\BadWordsRepository;
 use OrderBundle\Service\BadWordsValidator;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class BadWordsValidatorTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider badWordsDataProvider
-     */
-    public function hasBadWords($badWordsList, $text, $foundBadWords)
+    #[DataProvider('badWordsDataProvider')]
+    public function testHasBadWords($badWordsList, $text, $foundBadWords)
     {
         $badWordsRepository = $this->createMock(BadWordsRepository::class);
 
@@ -26,7 +24,7 @@ class BadWordsValidatorTest extends TestCase
         $this->assertEquals($foundBadWords, $hasBadWords);
     }
 
-    public function badWordsDataProvider()
+    public static function badWordsDataProvider()
     {
         return [
             'shouldFindWhenHasBadWords' => [

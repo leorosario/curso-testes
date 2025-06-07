@@ -20,6 +20,14 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         array (
             'OrderBundle\\' => 12,
         ),
+        'M' => 
+        array (
+            'MyFramework\\' => 12,
+        ),
+        'F' => 
+        array (
+            'FidelityProgramBundle\\' => 22,
+        ),
         'D' => 
         array (
             'DeepCopy\\' => 9,
@@ -34,6 +42,14 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         'OrderBundle\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/OrderBundle',
+        ),
+        'MyFramework\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/MyFramework',
+        ),
+        'FidelityProgramBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/FidelityProgramBundle',
         ),
         'DeepCopy\\' => 
         array (

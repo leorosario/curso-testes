@@ -8,12 +8,11 @@ use FidelityProgramBundle\Service\PointsCalculator;
 use MyFramework\LoggerInterface;
 use OrderBundle\Entity\Customer;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class FidelityProgramServiceTest extends TestCase
 {
-    /**
-     * @test
-     */
+   #[Test]
     public function shouldSaveWhenReceivePoints()
     {
         $pointsRepository = $this->createMock(PointsRepository::class);
@@ -50,9 +49,7 @@ class FidelityProgramServiceTest extends TestCase
         $this->assertEquals($expectedMessages, $allMessages);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotSaveWhenReceiveZeroPoints()
     {
         $pointsRepository = $this->createMock(PointsRepository::class);

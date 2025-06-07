@@ -3,7 +3,9 @@
     "description": "Projeto de testes",
     "autoload": {
         "psr-4": {
-            "OrderBundle\\": "src/OrderBundle/"
+            "OrderBundle\\": "src/OrderBundle/",
+            "FidelityProgramBundle\\": "src/FidelityProgramBundle/",
+            "MyFramework\\": "app/MyFramework/"
         }
     },
     "authors": [

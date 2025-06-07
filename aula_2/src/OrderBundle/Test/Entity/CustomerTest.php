@@ -4,14 +4,12 @@ namespace OrderBundle\Test\Entity;
 
 use OrderBundle\Entity\Customer;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class CustomerTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider customerAllowedDataProvider
-     */
-    public function isAllowedToOrder($isActive, $isBlocked, $expectedAlloed)
+    #[DataProvider('customerAllowedDataProvider')]
+    public function testIsAllowedToOrder($isActive, $isBlocked, $expectedAlloed)
     {
         $customer = new Customer(
             $isActive,
@@ -25,7 +23,7 @@ class CustomerTest extends TestCase
         $this->assertEquals($expectedAlloed, $isAllowed);
     }
 
-    public function customerAllowedDataProvider()
+    public static function customerAllowedDataProvider()
     {
         return [
             'shouldBeAllowedWhenIsActiveAndNotBlocked' => [
