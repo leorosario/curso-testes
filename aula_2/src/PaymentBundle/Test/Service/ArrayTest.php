@@ -3,27 +3,24 @@
 namespace PaymentBundle\Test\Service;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ArrayTest extends TestCase
 {
     private $array;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
 
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldBeEmpty()
     {
         $this->assertEmpty($this->array);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldBeFilled()
     {
         $this->array = ['hello' => 'world'];

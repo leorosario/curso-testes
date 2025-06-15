@@ -15,6 +15,7 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         'P' => 
         array (
             'PhpParser\\' => 10,
+            'PaymentBundle\\' => 14,
         ),
         'O' => 
         array (
@@ -38,6 +39,10 @@ class ComposerStaticInit7811e1eeb0c72d83f6a92ed8105d1a32
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PaymentBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/PaymentBundle',
         ),
         'OrderBundle\\' => 
         array (

@@ -6,12 +6,11 @@ use MyFramework\HttpClientInterface;
 use MyFramework\LoggerInterface;
 use PaymentBundle\Service\Gateway;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class GatewayTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotPayWhenAuthenticationFail()
     {
         $httpClient = $this->createMock(HttpClientInterface::class);
@@ -46,9 +45,7 @@ class GatewayTest extends TestCase
         $this->assertEquals(false, $paid);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotPayWhenFailOnGateway()
     {
         $httpClient = $this->createMock(HttpClientInterface::class);
@@ -59,12 +56,12 @@ class GatewayTest extends TestCase
 
         $token = 'meu-token';
         $httpClient
-            ->expects($this->at(0))
+            ->expects($this->exactly(0))
             ->method('send')
             ->willReturn($token);
 
         $httpClient
-            ->expects($this->at(1))
+            ->expects($this->exactly(1))
             ->method('send')
             ->willReturn(['paid' => false]);
 
@@ -87,9 +84,7 @@ class GatewayTest extends TestCase
         $this->assertEquals(false, $paid);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldSuccessfullyPayWhenGatewayReturnOk()
     {
         $httpClient = $this->createMock(HttpClientInterface::class);

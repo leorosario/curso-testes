@@ -10,6 +10,7 @@ use PaymentBundle\Repository\PaymentTransactionRepository;
 use PaymentBundle\Service\Gateway;
 use PaymentBundle\Service\PaymentService;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class PaymentServiceTest extends TestCase
 {
@@ -20,7 +21,7 @@ class PaymentServiceTest extends TestCase
     private $item;
     private $creditCard;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->gateway = $this->createMock(Gateway::class);
         $this->paymentTransactionRepository = $this->createMock(PaymentTransactionRepository::class);
@@ -31,9 +32,7 @@ class PaymentServiceTest extends TestCase
         $this->creditCard = $this->createMock(CreditCard::class);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldSaveWhenGatewayReturnOkWithRetries()
     {
         $this->gateway
@@ -50,9 +49,7 @@ class PaymentServiceTest extends TestCase
         $this->paymentService->pay($this->customer, $this->item, $this->creditCard);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldThrowExceptionWhenGatewayFails()
     {
         $this->gateway
@@ -71,7 +68,7 @@ class PaymentServiceTest extends TestCase
         $this->paymentService->pay($this->customer, $this->item, $this->creditCard);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->gateway);
     }

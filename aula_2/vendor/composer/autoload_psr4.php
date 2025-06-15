@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'PaymentBundle\\' => array($baseDir . '/src/PaymentBundle'),
     'OrderBundle\\' => array($baseDir . '/src/OrderBundle'),
     'MyFramework\\' => array($baseDir . '/app/MyFramework'),
     'FidelityProgramBundle\\' => array($baseDir . '/src/FidelityProgramBundle'),

@@ -5,7 +5,8 @@
         "psr-4": {
             "OrderBundle\\": "src/OrderBundle/",
             "FidelityProgramBundle\\": "src/FidelityProgramBundle/",
-            "MyFramework\\": "app/MyFramework/"
+            "MyFramework\\": "app/MyFramework/",
+            "PaymentBundle\\": "src/PaymentBundle/"
         }
     },
     "authors": [
