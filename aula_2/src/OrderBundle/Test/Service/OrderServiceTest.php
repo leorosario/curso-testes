@@ -15,6 +15,7 @@ use OrderBundle\Service\OrderService;
 use PaymentBundle\Entity\PaymentTransaction;
 use PaymentBundle\Service\PaymentService;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class OrderServiceTest extends TestCase
 {
@@ -26,8 +27,9 @@ class OrderServiceTest extends TestCase
     private $item;
     private $creditCard;
     private $orderService;
+    
 
-    public function setUp()
+    public function setUp():void
     {
         $this->badWordsValidator = $this->createMock(BadWordsValidator::class);
         $this->paymentService = $this->createMock(PaymentService::class);
@@ -39,9 +41,7 @@ class OrderServiceTest extends TestCase
         $this->creditCard = $this->createMock(CreditCard::class);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotProcessWhenCustomerIsNotAllowed()
     {
         $this->withOrderService()
@@ -57,9 +57,7 @@ class OrderServiceTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotProcessWhenItemIsNotAvailable()
     {
         $this->withOrderService()
@@ -76,9 +74,7 @@ class OrderServiceTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldNotProcessWhenBadWordsIsFound()
     {
         $this->withOrderService()
@@ -96,9 +92,7 @@ class OrderServiceTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function shouldSuccessfullyProcess()
     {
         $this->withOrderService()
