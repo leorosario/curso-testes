@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <report>
+            <html outputDirectory="report"/>
+        </report>
+    </coverage>
+
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>src</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

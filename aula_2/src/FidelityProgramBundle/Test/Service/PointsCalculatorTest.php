@@ -4,12 +4,11 @@ namespace FidelityProgramBundle\Test\Service;
 
 use FidelityProgramBundle\Service\PointsCalculator;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class PointsCalculatorTest extends TestCase
 {
-    /**
-     * @dataProvider valueDataProvider
-     */
+    #[DataProvider('valueDataProvider')]
     public function testPointsToReceive($value, $expectedPoints)
     {
         $pointsCalculator = new PointsCalculator();
